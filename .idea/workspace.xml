@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bc02d85-2d75-4167-bf9b-23f9758e9373" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/bayesian_ntk/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bayesian_ntk/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bayesian_ntk/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/bayesian_ntk/train.py" afterDir="false" />
-    </list>
+    <list default="true" id="7bc02d85-2d75-4167-bf9b-23f9758e9373" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,15 +201,15 @@
       <updated>1597414897588</updated>
       <workItem from="1597414917373" duration="3369000" />
       <workItem from="1597513285788" duration="2478000" />
-      <workItem from="1597562839337" duration="2146000" />
+      <workItem from="1597562839337" duration="2521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7993000" />
+    <option name="totallyTimeSpent" value="8368000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25670242" />
