@@ -26,12 +26,12 @@ def homoscedastic_model(
     """
     act = activation_fn(activation)
 
-    layers_list = [Dense(2, W_std, b_std, parameterization=parameterization)]
+    layers_list = [Dense(width, W_std, b_std, parameterization=parameterization)]
 
     def layer_block():
         return stax.serial(act(), Dense(width, W_std, b_std, parameterization=parameterization))
 
-    for _ in range(depth):
+    for _ in range(depth - 1):
         layers_list += [layer_block()]
 
     layers_list += [act(), Dense(1, W_std, b_std, parameterization=parameterization)]
