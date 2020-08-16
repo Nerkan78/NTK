@@ -35,7 +35,9 @@ def homoscedastic_model(
         layers_list += [layer_block()]
 
     layers_list += [act(), Dense(1, W_std, b_std, parameterization=parameterization)]
-    print (f"---- layer list is {layers_list} ------")
+
+    # print (f"---- layer list is {layers_list} ------")
+    
     init_fn, apply_fn, kernel_fn = stax.serial(*layers_list)
 
     apply_fn = jit(apply_fn)

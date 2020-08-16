@@ -56,7 +56,9 @@ def train_model(
 
     # initialise initial parameters
     _, init_params = init_fn(key, (-1, 1))
+
     # print(f"---- init params are {init_params} ----------")
+
     # initialise auxiliary (non-trainable) parameters for JVPs in NTKGP methods
     # or extra forward pass in RP-fn method
     key, subkey = random.split(key)
