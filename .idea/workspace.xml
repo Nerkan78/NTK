@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bc02d85-2d75-4167-bf9b-23f9758e9373" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/bayesian_ntk/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/bayesian_ntk/train.py" afterDir="false" />
-    </list>
+    <list default="true" id="7bc02d85-2d75-4167-bf9b-23f9758e9373" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bayesian_ntk/predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="103" column="6" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="6" />
+            <state relative-caret-position="336">
+              <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
               <folding>
                 <element signature="e#770#793#0" expanded="true" />
               </folding>
@@ -50,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bayesian_ntk/train.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
@@ -210,12 +208,12 @@
       <workItem from="1597513285788" duration="2478000" />
       <workItem from="1597562839337" duration="7711000" />
       <workItem from="1597601900860" duration="783000" />
-      <workItem from="1597648072393" duration="2069000" />
+      <workItem from="1597648072393" duration="2406000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16410000" />
+    <option name="totallyTimeSpent" value="16747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -332,22 +330,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bayesian_ntk/predict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="103" column="6" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="6" />
-          <folding>
-            <element signature="e#770#793#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bayesian_ntk/train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bayesian_ntk/predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+          <folding>
+            <element signature="e#770#793#0" expanded="true" />
           </folding>
         </state>
       </provider>

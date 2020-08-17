@@ -102,9 +102,10 @@ def _mean_prediction(op, g_td, y_train):
     The mean prediction of the GP. `g_td @ op @ y_train`.
   """
   fl, ufl = _make_flatten_uflatten(g_td, y_train)
-
+  print (f" ------- y_train is {y_train} -------")
   mean_pred = op(fl(y_train))
   mean_pred = np.dot(g_td, mean_pred)
+  print (f" ------- mean_pred os {mean_pred} ------")
   return ufl(mean_pred)
 
 def _posterior_std(op, g_td, g_tt, output_noise_var):
