@@ -34,7 +34,7 @@ def homoscedastic_model(
     for _ in range(depth-1):
         layers_list += [layer_block()]
 
-    layers_list += [act(), Dense(1, W_std, b_std, parameterization=parameterization)]
+    layers_list += [act(), Dense(2, W_std, b_std, parameterization=parameterization)]
 
     # print (f"---- layer list is {layers_list} ------")
 
