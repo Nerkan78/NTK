@@ -195,7 +195,9 @@ def _gp_inference_mat(kdd,
   if 'nngp' in get:
     op = _inv_operator(kdd.nngp, diag_reg)
     pred_mean = _mean_prediction(op, ktd.nngp, y_train)
-    pred_mean = pred_mean.reshape(-1,)
+
+    # pred_mean = pred_mean.reshape(-1,)
+
     if ktt is not None:
       pred_std = _posterior_std(op, ktd.nngp, ktt.nngp, diag_reg)
     out['nngp'] = (
@@ -204,7 +206,9 @@ def _gp_inference_mat(kdd,
   if 'ntk' in get:
     op = _inv_operator(kdd.ntk, diag_reg)
     pred_mean = _mean_prediction(op, ktd.ntk, y_train)
-    pred_mean = pred_mean.reshape(-1,)
+
+    # pred_mean = pred_mean.reshape(-1,)
+
     if ktt is not None:
       pred_std = _posterior_std(op, ktd.ntk, ktt.ntk, diag_reg)
     out['ntk'] = (Gaussian(pred_mean, pred_std) if ktt is not None else pred_mean)
