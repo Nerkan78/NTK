@@ -66,7 +66,7 @@ def _inv_operator(g_dd, diag_reg=0.0):
 def _make_flatten_uflatten(g_td, y_train):
   """Create the flatten and unflatten utilities."""
   output_dimension = y_train.shape[-1]
-
+  print(f"------ shape of y_train is {y_train.shape} -------")
   def fl(fx):
     """Flatten outputs."""
     return np.reshape(fx, (-1,))
