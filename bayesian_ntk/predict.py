@@ -73,6 +73,10 @@ def _make_flatten_uflatten(g_td, y_train):
 
   def ufl(fx):
     """Unflatten outputs."""
+
+    print(f"----- input is {fx} ------")
+    print(f"----- output dimension is {output_dimension} -------")
+
     return np.reshape(fx, (-1, output_dimension))
 
   if y_train.size > g_td.shape[-1]:
