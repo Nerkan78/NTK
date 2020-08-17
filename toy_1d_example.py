@@ -9,8 +9,25 @@ Original file is located at
 ### Imports (requiring github login) and plot utils
 """
 
+# !git pull https://github.com/Nerkan78/NTK.git
+# %cd bayesian-ntk
+# !pip -q install -r requirements.txt
+# !pip -q install .
 
+# !git clone https://github.com/Nerkan78/NTK.git
+# %cd bayesian-ntk
+# !pip -q install -r requirements.txt
+# !pip -q install .
 
+# Commented out IPython magic to ensure Python compatibility.
+# %cd /content/NTK
+!git pull
+!pip -q install -r requirements.txt
+!pip -q install .
+
+#@title ##### (Imports)
+from importlib import reload
+import numpy as usual_np
 import jax.numpy as np
 from jax import random
 from jax import vmap
@@ -18,6 +35,7 @@ from jax import vmap
 import functools
 
 # from bayesian_ntk.utils import get_toy_data
+import bayesian_ntk
 from bayesian_ntk.models import homoscedastic_model
 from bayesian_ntk.train import train_model
 from bayesian_ntk.predict import Gaussian
@@ -30,6 +48,19 @@ import seaborn as sns
 sns.set(font_scale=1.3)
 sns.set_style("darkgrid", {"axes.facecolor": ".95"})
 import matplotlib.pyplot as plt
+
+import bayesian_ntk
+bayesian_ntk = reload(bayesian_ntk)
+bayesian_ntk.models = reload(bayesian_ntk.models)
+bayesian_ntk.train = reload(bayesian_ntk.train )
+bayesian_ntk.predict = reload(bayesian_ntk.predict)
+from bayesian_ntk.models import homoscedastic_model
+from bayesian_ntk.train import train_model
+from bayesian_ntk.predict import Gaussian
+from bayesian_ntk import predict, config, train_utils
+
+from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
 
 #@title ##### (GET DATA)
 import jax.numpy as np
@@ -78,37 +109,50 @@ def get_toy_data(
         half_train_points = train_points // 2
         train_xs_left = random.uniform(
             x_key,
-            shape = (half_train_points, 1),
+            shape = (half_train_points, 2),
             minval = -train_xlim,
             maxval = -train_xlim/3
         )
 
         train_xs_right = random.uniform(
             x_key,
-            shape = (half_train_points, 1),
+            shape = (half_train_points, 2),
             minval = train_xlim/3,
             maxval = train_xlim
         )
 
         train_xs = np.concatenate((train_xs_left, train_xs_right))
 
-    target_fn = lambda x: x * np.sin(x) 
+    target_fn = lambda x: np.array([e[0] * np.sin(e[0]) + e[1] * np.sin(e[1]) for e in x] )
 
     train_ys = target_fn(train_xs)
-    train_ys += noise_scale * random.normal(y_key, (train_points, 1))
+    train_ys += noise_scale * random.normal(y_key, (train_points, 1)).squeeze()
     train = Data(
         inputs = train_xs,
-        targets = train_ys
+        targets = train_ys.reshape(-1,1)
     )
 
     test_xs = np.linspace(-test_xlim, test_xlim, test_points)
-    test_xs = np.reshape(test_xs, (test_points, 1))
+    test_xs = np.repeat(test_xs, 2).reshape(test_points,2)
     test_ys = target_fn(test_xs)
     test = Data(
         inputs = test_xs,
-        targets = test_ys
+        targets = test_ys.reshape(-1,1)
     )
     return train, test
+
+data = usual_np.loadtxt('dataset/data.txt')
+jax_x_data = np.array(data)[:3000, :-2]
+jax_y_data = np.array(data)[:3000, -1].reshape(-1,1)
+
+jax_x_data = preprocessing.StandardScaler().fit_transform(jax_x_data)
+
+X_train, X_test, y_train, y_test = train_test_split( jax_x_data, jax_y_data, test_size=0.6, random_state=42)
+
+train_data = Data( inputs = np.array(X_train), targets = y_train)
+test_data = Data( inputs = np.array(X_test), targets = y_test)
+
+jax_x_data.shape
 
 #@title ##### (PLOT Functions)
 def format_plot(x=None, y=None):
@@ -148,7 +192,7 @@ The package stores default config files in `bayesian_ntk.config`. For example, o
 """
 
 model_config = config.get_model_config('default')
-print(model_config)
+# print(model_config)
 
 """We can now use Neural Tangents to return a `kernel_fn` function that calculates the analytic NTK & NNGP kernels for an infinite width version of the NN corresponding to our `model_config` under NTK parameterisation."""
 
@@ -160,14 +204,16 @@ _, _, kernel_fn = homoscedastic_model(parameterization = 'ntk', **model_config)
 
 key = random.PRNGKey(10);
 data_config = config.get_data_config('default')
-train_data, test_data = get_toy_data(key, config.NOISE_SCALE, **data_config)
+# train_data, test_data = get_toy_data(key, config.NOISE_SCALE, **data_config)
 
+# train_data.targets
 
+data_config
 
 """Let's visualise our train and test data"""
 
-plot_fn(train_data, test_data)
-finalize_plot((1,1))
+# plot_fn(train_data, test_data)
+# finalize_plot((1,1))
 
 """## Making predictions
 
@@ -203,21 +249,58 @@ train_ensemble = lambda train_method: vmap(train_baselearner, (0, None))(ensembl
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%time
-ensemble_methods_list = ['Deep ensemble', 'RP-param', 'NTKGP-param']
+# ensemble_methods_list = ['Deep ensemble', 'RP-param', 'NTKGP-param']
+# 
+# # this may take a few minutes
+# for method_idx, method in enumerate(ensemble_methods_list):
+#     method_input_str = train_utils.method_input_dct[method]
+#     print(f"Training ensemble method {method_idx+1}/{len(ensemble_methods_list)}: {method}")
+#     baselearners_test_pred = train_ensemble(method_input_str)
+#     
+# 
+#     # print(f"{method} : shape is {baselearners_test_pred.shape} \n pred is {baselearners_test_pred} ")
+#     ensemble_mean = np.mean(baselearners_test_pred, axis = 0) #.reshape(-1,)
+# 
+#     # ensemble_var = []
+#     # for idx in range(baselearners_test_pred.shape[1]):
+#     #     cov_matrix = usual_np.cov(baselearners_test_pred[:, idx, :].T)
+#     #     ensemble_var.append(cov_matrix)
+# 
+#     ensemble_var = np.var(baselearners_test_pred, axis = 0, ddof = 1) #.reshape(-1,)
+#     # ensemble_std = np.sqrt(ensemble_var + config.NOISE_SCALE ** 2)
+# 
+#     predictions.update(
+#         {
+#             method: Gaussian(ensemble_mean, ensemble_var)
+#         }
+#     )
 
-# this may take a few minutes
-for method_idx, method in enumerate(ensemble_methods_list):
-    method_input_str = train_utils.method_input_dct[method]
-    print(f"Training ensemble method {method_idx+1}/{len(ensemble_methods_list)}: {method}")
-    baselearners_test_pred = train_ensemble(method_input_str)
-    ensemble_mean = np.mean(baselearners_test_pred, axis = 0).reshape(-1,)
-    ensemble_var = np.var(baselearners_test_pred, axis = 0, ddof = 1).reshape(-1,)
-    ensemble_std = np.sqrt(ensemble_var + config.NOISE_SCALE ** 2)
-    predictions.update(
-        {
-            method: Gaussian(ensemble_mean, ensemble_std)
-        }
-    )
+def estimate_log_likelihood(targets, means, stds ):
+    log_likelihood = 0
+    for target, mean, std in zip(targets, means, stds ):
+
+        log_likelihood -= np.log(np.sqrt(2 * np.pi * std)) + (target-mean)**2 / ( 2 * std)
+
+        # log_likelihood -= np.log(2 * np.pi * np.sqrt(np.linalg.det(std))) + (target - mean).T @np.linalg.inv(std)@(target - mean) / 2
+    return log_likelihood
+
+for method in predictions:
+    print(f"{method}: loglikelihood is {estimate_log_likelihood(test_data.targets, predictions[method].mean, predictions[method].standard_deviation )}")
+
+test_data.targets.shape
+
+(predictions['NTKGP analytic']).standard_deviation.shape
+
+fig = plt.figure()
+ax = plt.axes(projection="3d")
+def z_function(x, y):
+    return np.sin(np.sqrt(x ** 2 + y ** 2))
+
+x = np.linspace(-6, 6, 30)
+y = np.linspace(-6, 6, 30)
+
+X, Y = np.meshgrid(x, y)
+Z = z_function(X, Y)
 
 """Finally, we plot mean predictions and 95% predictive CI for the different analytic posterior and ensemble methods, reproducing Figure 1 from our paper."""
 
