@@ -42,8 +42,8 @@ Data = namedtuple(
 ''' Get data'''
 data = usual_np.loadtxt('dataset/data.txt')
 
-jax_x_data = np.array(data)[:100, :-2]
-jax_y_data = np.array(data)[:100, -1].reshape(-1,1)
+jax_x_data = np.array(data)[:, :-2]
+jax_y_data = np.array(data)[:, -1].reshape(-1,1)
 
 jax_x_data = preprocessing.StandardScaler().fit_transform(jax_x_data)
 X_train, X_test, y_train, y_test = train_test_split( jax_x_data, jax_y_data, test_size=0.6, random_state=42)
