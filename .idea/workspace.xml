@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bc02d85-2d75-4167-bf9b-23f9758e9373" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toy_1d_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/toy_1d_example.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +38,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bayesian_ntk/train.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-55">
@@ -71,11 +71,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/toy_1d_example.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3444">
-              <caret line="176" column="61" selection-start-line="176" selection-start-column="61" selection-end-line="176" selection-end-column="61" />
+            <state relative-caret-position="-1008">
+              <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+              <folding>
+                <element signature="e#678#706#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,10 +131,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/toy_1d_example.py" />
         <option value="$PROJECT_DIR$/bayesian_ntk/train.py" />
         <option value="$PROJECT_DIR$/bayesian_ntk/predict.py" />
         <option value="$PROJECT_DIR$/bayesian_ntk/models.py" />
+        <option value="$PROJECT_DIR$/toy_1d_example.py" />
       </list>
     </option>
   </component>
@@ -221,12 +224,12 @@
       <workItem from="1597562839337" duration="7711000" />
       <workItem from="1597601900860" duration="783000" />
       <workItem from="1597648072393" duration="6797000" />
-      <workItem from="1597672504197" duration="897000" />
+      <workItem from="1597672504197" duration="1832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22035000" />
+    <option name="totallyTimeSpent" value="22970000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -299,13 +302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/toy_1d_example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3444">
-          <caret line="176" column="61" selection-start-line="176" selection-start-column="61" selection-end-line="176" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/programs/Anaconda/Lib/site-packages/jax/api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14973">
@@ -366,6 +362,16 @@
           <caret line="51" column="15" lean-forward="true" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toy_1d_example.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1008">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+          <folding>
+            <element signature="e#678#706#0" expanded="true" />
           </folding>
         </state>
       </provider>
