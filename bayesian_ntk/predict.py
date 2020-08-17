@@ -105,6 +105,7 @@ def _mean_prediction(op, g_td, y_train):
   print (f" ------- y_train is {y_train} -------")
   mean_pred = op(fl(y_train))
   print(f" ------- mean_pred  before dot is {mean_pred} ------")
+  print(f" ------- g_td is {g_td} ------")
   mean_pred = np.dot(g_td, mean_pred)
   print (f" ------- mean_pred os {mean_pred} ------")
   return ufl(mean_pred)
