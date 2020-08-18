@@ -55,7 +55,7 @@ def train_model(
      )
 
     # initialise initial parameters
-    _, init_params = init_fn(key, (-1, 16))
+    _, init_params = init_fn(key, (-1, 9))
 
     # print(f"---- init params are {init_params} ----------")
 
