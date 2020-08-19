@@ -1,38 +1,38 @@
-
-
-
-#@title ##### (Imports)
-from importlib import reload
-import numpy as usual_np
-import jax.numpy as np
-from jax import random
-from jax import vmap
-
-import functools
-
-# from bayesian_ntk.utils import get_toy_data
-import bayesian_ntk
-from bayesian_ntk.models import homoscedastic_model
-from bayesian_ntk.train import train_model
-from bayesian_ntk.predict import Gaussian
-from bayesian_ntk import predict, config, train_utils
-
-from IPython.display import set_matplotlib_formats
-set_matplotlib_formats('pdf', 'svg')
-import matplotlib
-import seaborn as sns
-sns.set(font_scale=1.3)
-sns.set_style("darkgrid", {"axes.facecolor": ".95"})
-import matplotlib.pyplot as plt
-
-
-from sklearn import preprocessing
-from sklearn.model_selection import train_test_split
-
-#@title ##### (GET DATA)
-from jax import random
-import math
-from collections import namedtuple
+#
+#
+#
+# #@title ##### (Imports)
+# from importlib import reload
+# import numpy as usual_np
+# import jax.numpy as np
+# from jax import random
+# from jax import vmap
+#
+# import functools
+#
+# # from bayesian_ntk.utils import get_toy_data
+# import bayesian_ntk
+# from bayesian_ntk.models import homoscedastic_model
+# from bayesian_ntk.train import train_model
+# from bayesian_ntk.predict import Gaussian
+# from bayesian_ntk import predict, config, train_utils
+#
+# from IPython.display import set_matplotlib_formats
+# set_matplotlib_formats('pdf', 'svg')
+# import matplotlib
+# import seaborn as sns
+# sns.set(font_scale=1.3)
+# sns.set_style("darkgrid", {"axes.facecolor": ".95"})
+# import matplotlib.pyplot as plt
+#
+#
+# from sklearn import preprocessing
+# from sklearn.model_selection import train_test_split
+#
+# #@title ##### (GET DATA)
+# from jax import random
+# import math
+# from collections import namedtuple
 import jax
 print(jax.devices())
 # Data = namedtuple(

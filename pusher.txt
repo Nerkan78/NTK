@@ -1,3 +1,9 @@
 git add --all
 git commit -m 'test'
 git push
+
+
+
+
+D:
+cd Dev\Python\projects\NTK
