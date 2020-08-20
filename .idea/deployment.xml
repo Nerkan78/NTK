@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="user7@main.neurus.ru:22829">
+    <serverData>
+      <paths name="user7@main.neurus.ru:22829">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/mnt/mipt_storage01/user7/NTK_without_git" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="vayser@188.93.104.86:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/vayser/NTK_without_git" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
