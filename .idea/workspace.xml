@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bc02d85-2d75-4167-bf9b-23f9758e9373" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/bayesian_ntk/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/bayesian_ntk/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -288,15 +288,15 @@
       <workItem from="1597822168241" duration="2706000" />
       <workItem from="1597838202238" duration="8851000" />
       <workItem from="1597905283581" duration="2191000" />
-      <workItem from="1597934061940" duration="608000" />
+      <workItem from="1597934061940" duration="1203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41209000" />
+    <option name="totallyTimeSpent" value="41804000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2855228" />
